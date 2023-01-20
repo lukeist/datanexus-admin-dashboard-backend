@@ -4,7 +4,6 @@ import ProductStat from "../models/ProductStat.js";
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-
     const productsWithStats = await Promise.all(
       products.map(async (product) => {
         // get productStat of each product
