@@ -21,7 +21,6 @@ export const getUserPerformance = async (req, res) => {
       //  convert the id above into correct format then find one that match,
       //// matching our current user using id === _id
       { $match: { _id: new mongoose.Types.ObjectId(id) } }, //
-      ,
       {
         //
         $lookup: {
@@ -56,7 +55,7 @@ export const getUserPerformance = async (req, res) => {
     res
       .status(200)
       .json({ user: userWithStats[0], sales: filteredSaleTransactions });
-  } catch {
+  } catch (error) {
     res.status(404).json({ message: error.message });
   }
 };
