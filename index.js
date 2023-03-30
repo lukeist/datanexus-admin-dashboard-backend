@@ -52,6 +52,7 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
     // ONLY ADD THIS DATA ONE TIME FOR MOCK DB
     // OverallStat.insertMany(dataOverallStat);
     // User.insertMany(dataUser);
